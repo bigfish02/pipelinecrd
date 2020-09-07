@@ -44,7 +44,7 @@ var (
 	CustomerPipeline PipelineType = "Customer"
 )
 
-// ApplicationList is a list of Application resources
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type PipelineList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata"`
