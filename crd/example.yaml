@@ -1,0 +1,27 @@
+apiVersion: one.xiaohongshu.com/v1
+kind: Pipeline
+metadata:
+  name: fulishejava
+spec:
+  type: global
+  trigger: ""
+  stages:
+    - name: 开始
+      type: start
+    - name: deploy staging
+      type: deploy
+      cluster: sit
+      depends_on:
+        - 开始
+      resource_templates:
+        - name: fls-java-deployment
+        - name: fls-java-service
+        - name: fls-java-configmap-xx
+    - name: 发布灰度
+      type: deploy
+      resource:
+        - fls
+    - name: 全量发布
+      type: deploy
+    - name: 结束
+      type: end
