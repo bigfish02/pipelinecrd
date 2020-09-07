@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"github.com/bigfish02/applicationcrd/pkg/apis/one"
+	"github.com/bigfish02/pipelinecrd/pkg/apis/one"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
